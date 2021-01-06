@@ -19,14 +19,14 @@ define([
     applicationName: 'FeatureTree',
     requireAuth: true,
     applicationLabel: 'Feature Tree',
-    applicationDescription: 'The Featuer Tree Service is being tested.',
+    applicationDescription: 'The Feature Tree Service is being tested.',
     applicationHelp: 'user_guides/services/proteome_comparison_service.html',
     tutorialLink: 'tutorial/proteome_comparison/proteome_comparison.html',
     videoLink: '/videos/proteome_comparison_service.html',
     pageTitle: 'Feature Tree',
     defaultPath: '',
-    startingRows: 9,
-    maxGenomes: 9,
+    startingRows: 1,
+    maxGenomes: 1,
 
     constructor: function () {
       this._selfSet = true;
@@ -374,6 +374,7 @@ define([
           handle.remove();
         }));
         this.increaseGenome('fasta', newGenomeIds);
+        this.sequenceSource = "ws";
       }
       // console.log(lrec);
     },
@@ -408,6 +409,7 @@ define([
           handle.remove();
         }));
         this.increaseGenome('feature_group', newGenomeIds);
+        this.sequenceSource = "feature_group";
       }
       // console.log(lrec);
     },
@@ -578,15 +580,15 @@ define([
       seqcomp_values.alphabet = values.alphabet;
       seqcomp_values.recipe = values.recipe;
       seqcomp_values.protein_model = values.protein_model;
-      seqcomp_values.sequence_source = "ws";  // distinguish from local??
+      seqcomp_values.sequence_source = this.sequenceSource;
 
       //seqcomp_values.genome_ids = genomeIds;
       if (userGenomes.length > 0) {
-        seqcomp_values.sequences = userGenomes;
+        seqcomp_values.sequences = userGenomes[0];
       }
 
       if (featureGroups.length > 0) {
-        seqcomp_values.sequences = featureGroups;
+        seqcomp_values.sequences = featureGroups[0];
       }
 
       /* if (refType == 'ref_genome_id') {
