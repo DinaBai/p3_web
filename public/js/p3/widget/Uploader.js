@@ -52,8 +52,23 @@ define([
         label: 'Diff. Expression Input Metadata',
         formats: ['.csv', '.txt', '.xls', '.xlsx']
       },
+      feature_dna_fasta: {
+        label: 'Feature DNA FASTA',
+        formats: ['.fa', '.fasta', '.faa'],
+        description: 'DNA sequences must be provided in fasta format (typically .fa, .fasta, .faa). Genbank formatted files are not currently accepted.'
+      },
       feature_protein_fasta: {
         label: 'Feature Protein FASTA',
+        formats: ['.fa', '.fasta', '.faa'],
+        description: 'Protein sequences must be provided in fasta format (typically .fa, .fasta, .faa). Genbank formatted files are not currently accepted.'
+      },
+      aligned_dna_fasta: {
+        label: 'Aligned DNA FASTA',
+        formats: ['.fa', '.fasta', '.faa'],
+        description: 'DNA sequences must be provided in fasta format (typically .fa, .fasta, .faa). Genbank formatted files are not currently accepted.'
+      },
+      aligned_protein_fasta: {
+        label: 'Aligned Protein FASTA',
         formats: ['.fa', '.fasta', '.faa'],
         description: 'Protein sequences must be provided in fasta format (typically .fa, .fasta, .faa). Genbank formatted files are not currently accepted.'
       },
